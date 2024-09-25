@@ -18,7 +18,7 @@
 3.猿社区有强大的开发者与产品经理社区支持，可以联系客服加入，目前已有100+的伙伴加入我们，平时也有开源项目组队 <br/>
 
 # 系统图片
-![输入图片说明](https://gitee.com/apehub/BuildingMaterials/raw/master/1727285094693.jpg)
+![输入图片说明](https://gitee.com/apehub/Fashion-Clothing-Clothing/raw/master/1727286531481.jpg)
 
 # 配套资料
 DedeCMS使用（快速入门）手册：https://help.dedecms.com/chujie//<br/>
