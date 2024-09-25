@@ -1,0 +1,34 @@
+
+<div id="head"></div>
+<div id="header">
+  <div class="main clear_both"> <a href="/" class="logo fl dis"><img src="/skin/img/logo.jpg"></a>
+    <div class="right fr clear_both"> <!--<a href="" class="lang fr fz15" title="en">en</a>-->
+      <div class="nav fr clear_both">
+        <div class="list fl on"> <a href="/" class="Zi1 fz15">网站首页</a> </div>
+        {dede:channelartlist typeid='top'}
+        <div class="list fl"> <a href="{dede:field name='typeurl'/}" class="Zi1 fz15" title="{dede:field name='typename'/}">{dede:field name='typename'/}</a>
+          <div class="two trans6s"> {dede:channel type='son' noself='yes'} <a href="[field:typeurl/]" class="fz15 dis">[field:typename/]</a> {/dede:channel} </div>
+        </div>
+        {/dede:channelartlist} </div>
+    </div>
+  </div>
+</div>
+
+<!-- 手机版头部 -->
+<div id="phone_header" class="trans">
+  <div class="main clear_both"> <a href="/" class="logo dis fl"><img src="/skin/img/logo.jpg"></a>
+    <div class="target trans fr" onclick="HeaderNavSH();"></div>
+    <!--<a href="" class="lang fr fz24 dis">EN</a>--> </div>
+  <div class="nav">
+    <div class="list" > <a href="/" class="Zi1 fz20 dis" onclick="PhoneHeaderNavTwo($(this));">网站首页</a> </div>
+    {dede:channelartlist typeid='top'}
+    <div class="list" > <a {dede:field name=typeid runphp="yes"}
+global $dsql;
+$sql = "SELECT id From `dede_arctype` WHERE reid='@me' And ishidden<>1 order by sortrank asc limit 0, 100 ";
+$row = $dsql->GetOne($sql);      
+      @me=is_array($row)?'href="javascript://" class="Zi1 fz20 dis"':'';
+      {/dede:field} href="{dede:field name='typeurl'/}" class="Zi1 fz20 dis" onclick="PhoneHeaderNavTwo($(this));">{dede:field name='typename'/}</a>
+      <div class="two"> {dede:channel type='son' noself='yes'} <a href="[field:typeurl/]" class="fz16 dis">[field:typename/]</a> {/dede:channel} </div>
+    </div>
+    {/dede:channelartlist} </div>
+</div>

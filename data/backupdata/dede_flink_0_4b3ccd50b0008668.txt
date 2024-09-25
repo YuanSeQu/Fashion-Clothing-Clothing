@@ -1,0 +1,7 @@
+INSERT INTO `dede_flink` VALUES('2','1','https://www.jsdaima.com/','IT资源下载','','','','1226375403','1','2');
+INSERT INTO `dede_flink` VALUES('9','1','https://www.jsdaima.com/','js代码','','','','1227772717','1','2');
+INSERT INTO `dede_flink` VALUES('8','1','https://www.jsdaima.com/js/','js特效','','','','1227772703','1','2');
+INSERT INTO `dede_flink` VALUES('10','1','https://www.jsdaima.com/webpage/','网站模板','','','','1513824023','1','2');
+INSERT INTO `dede_flink` VALUES('11','1','https://www.jsdaima.com/yuanma/','网站源码','','','','1513824037','1','2');
+INSERT INTO `dede_flink` VALUES('12','1','https://www.jsdaima.com/video/','视频教程','','','','1514338311','1','2');
+INSERT INTO `dede_flink` VALUES('13','1','https://www.jsdaima.com/qita/','资源共享','','','','1514338327','1','2');

@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui">
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<meta name="author" content="order by " />
+<link rel="stylesheet" rev="stylesheet" href="/skin/css/global.css" />
+<link rel="stylesheet" rev="stylesheet" href="/skin/css/lib.css" />
+<link rel="stylesheet" rev="stylesheet" href="/skin/css/style.css" />
+<link rel="stylesheet" rev="stylesheet" href="/skin/css/swiper-3.4.2.min.css" />
+<link rel="stylesheet" rev="stylesheet" href="/skin/css/animate.min2.css" />
+<script type="text/javascript" src="/skin/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/skin/js/wow.min.js"></script>
+<script type="text/javascript" src="/skin/js/website.js"></script>
+<script type="text/javascript" src="/skin/js/iepngfix_tilebg.js"></script>
+<script type="text/javascript" src="/skin/js/global.js"></script>
+<script type="text/javascript" src="/skin/js/swiper-3.4.2.min.js"></script>
+<script type="text/javascript" src="/skin/js/checkform.js"></script>
+<script type="text/javascript" src="/skin/js/cn.js"></script>
+<script type="text/javascript" src="/skin/js/swf_obj.js"></script>
+<script type="text/javascript" src="/skin/js/date.js"></script>
+</head>
+<body>
+<div id="warp">
+{dede:include filename="head.htm"/}
+<div id="banner-height">
+  <div id="banner-fixed">
+    <div id="banner" class="swiper-container"> <a href="javascript://" class="prev dis"></a> <a href="javascript://" class="next dis"></a>
+      <div class="db swiper-wrapper"> {dede:myppt typeid='1'}
+        <div class="list dis swiper-slide" style="background:url([field:pic/]) no-repeat center;"></div>
+        {/dede:myppt} </div>
+    </div>
+  </div>
+</div>
+
+<!--手机版广告图-->
+<div id="phone_banner" class="swiper-container">
+  <div class="swiper-wrapper"> {dede:myppt typeid='2'}
+    <div class="list swiper-slide"><img src="[field:pic/]"/></div>
+    {/dede:myppt} </div>
+  <div class="hb"></div>
+</div>
+<script type="text/javascript">
+	var BannerSwiper = new Swiper('#banner',{
+        //autoplay:4000,
+        prevButton: '#banner .prev',
+        nextButton: '#banner .next',
+        onSlideChangeStart: function(swiper){
+	    	$('#banner .db .list').find('.nts').removeClass('on');
+	    },
+	    onSlideChangeEnd: function(swiper){
+	    	$('#banner .db .list').eq(BannerSwiper.activeIndex).find('.nts').addClass('on');
+	    }
+	});
+	
+	var PhoneBannerSwiper = new Swiper('#phone_banner',{
+        autoplay:3000,
+	    pagination: '#phone_banner .hb',
+	    paginationClickable: '#phone_banner .hb',
+	});
+</script>
+<div id="index" class="relative">
+  <div class="one main clear_both">
+    <div class="nts fl wow fadeInLeft">
+      <div class="fz35 font-zi3">About</div>
+      <div class="fz100 font-zi3">brand</div>
+      <div class="icon dis"><img src="/skin/img/img4.png" alt="" /></div>
+      <div class="fz32 font-zi2">维多利亚港的午后</div>
+      <div class="Zi1 fz16 font-zi2">一个阳光明媚的午后，一坐典雅复古的咖啡馆<br/>
+        一位靠近窗户的位置</div>
+      {dede:type typeid='1'} <a href="[field:typeurl/]" class="Zi2 fz16 font-zi2 dis">探索更多</a>{/dede:type} </div>
+    <div class="img fr wow fadeInRight"><img src="/skin/img/img3.jpg"/></div>
+  </div>
+  {dede:channelartlist typeid='5,0'}
+  <div class="two">
+    <div class="main">
+      <div class="title wow fadeInLeft">
+        <div class="fz35 font-zi2">{dede:field name='typename'/}</div>
+        <div class="xian dis"></div>
+      </div>
+      <div class="category wow fadeInUp"> {dede:channel type="son"  currentstyle=" <a href='~typelink~' class='list dis fz16 font-zi4' >~typename~</a> " } <a href="[field:typeurl/]" class='list dis fz16 font-zi4'   >[field:typename/]</a> {/dede:channel} </div>
+      <div class="last clear_both"> {dede:arclist  titlelen=42  row='4' } <a href="[field:arcurl/]" [field:global runphp='yes' name=autoindex]
+            $a="class='list dis fl b_pic trans wow fadeInUp in to'";
+            $b="class='list dis fl b_pic trans wow fadeInUp to '";
+            if ((@me%2)==0 && @me!=30) @me=$a;
+            else  @me=$b;
+            [/field:global]>
+        <div class="img"><img src="[field:litpic/]" alt="[field:title /]"/></div>
+        <div class="nts">
+          <div class="ots">
+            <div class="fz18">[field:title /]</div>
+            <div class="fz12 font-zi4"><i></i>MORE<i></i></div>
+            <div class="fz75 font-zi5">0[field:global.autoindex/]</div>
+            <div class="xian"></div>
+          </div>
+        </div>
+        </a> {/dede:arclist} </div>
+      <div class="more"> <i></i><a href="{dede:field name='typeurl'/}" class="fz16 dis">READ MORE</a><i></i> </div>
+    </div>
+  </div>
+  {/dede:channelartlist}
+  {dede:channelartlist typeid='6,0'}
+  <div class="thr main">
+    <div class="title wow fadeInLeft hei">
+      <div class="fz35 font-zi2">{dede:field name='typename'/}</div>
+      <div class="xian dis"></div>
+    </div>
+    <div class="item swiper-container" id="thr">
+      <div class="swiper-wrapper"> {dede:arclist  titlelen=42  row='4' } <a href="[field:arcurl/]" [field:global runphp='yes' name=autoindex]
+            $a="class='list dis swiper-slide wow fadeInUp'";
+            $b="class='list dis swiper-slide wow fadeInUp '";
+            if ((@me%2)==0 && @me!=30) @me=$a;
+            else  @me=$b;
+            [/field:global]>
+        <div class="fz46 font-zi1">[field:pubdate function="MyDate('m-d',@me)"/]</div>
+        <div class="fz18 cut trans6s">[field:title /]</div>
+        <div class="Zi1 fz14 text-line">[field:description function="cn_substr(@me,160)"/]...</div>
+        <div class="xian trans6s"></div>
+        <div class="Zi2 dis fz14 trans6s">More</div>
+        </a> {/dede:arclist} </div>
+      <div class="page"> <a href="javascript://" class="prev dis wow fadeInLeft"></a> <a href="javascript://" class="next dis wow fadeInRight"></a> </div>
+    </div>
+  </div>
+  {/dede:channelartlist}
+  <div class="four">
+    <div class="main clear_both"> <a href="javascript://" class="prev dis trans2s fl wow fadeInLeft"></a>
+      <div class="last dis swiper-container" id="four">
+        <div class="swiper-wrapper clear_both"> {dede:myppt typeid='3' row='12'} <a class="list fl dis swiper-slide wow fadeInUp in" target="_blank" data-wow-delay="0.0s"> <img src="[field:pic/]"/></a> {/dede:myppt} </div>
+      </div>
+      <a href="javascript://" class="next dis trans2s fr wow fadeInRight"><img src=""/></a> </div>
+  </div>
+</div>
+{dede:include filename="footer.htm"/} 
+<script type="text/javascript">
+	var IndexThr = new Swiper('#thr',{
+		slidesPerView: 'auto',
+        prevButton: '#thr .prev',
+        nextButton: '#thr .next',
+	});
+
+	var IndexFour = new Swiper('#four',{
+		slidesPerView: 'auto',
+        prevButton: '.four .prev',
+        nextButton: '.four .next',
+	});
+</script>
+</body>
+</html>

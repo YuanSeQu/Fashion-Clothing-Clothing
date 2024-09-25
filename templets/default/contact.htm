@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link rel="stylesheet" rev="stylesheet" href="/skin/css/global.css" />
+<link rel="stylesheet" rev="stylesheet" href="/skin/css/lib.css" />
+<link rel="stylesheet" rev="stylesheet" href="/skin/css/style.css" />
+<link rel="stylesheet" rev="stylesheet" href="/skin/css/swiper-3.4.2.min.css" />
+<link rel="stylesheet" rev="stylesheet" href="/skin/css/animate.min2.css" />
+<script type="text/javascript" src="/skin/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/skin/js/wow.min.js"></script>
+<script type="text/javascript" src="/skin/js/website.js"></script>
+<script type="text/javascript" src="/skin/js/iepngfix_tilebg.js"></script>
+<script type="text/javascript" src="/skin/js/global.js"></script>
+<script type="text/javascript" src="/skin/js/swiper-3.4.2.min.js"></script>
+<script type="text/javascript" src="/skin/js/checkform.js"></script>
+<script type="text/javascript" src="/skin/js/cn.js"></script>
+<script type="text/javascript" src="/skin/js/swf_obj.js"></script>
+<script type="text/javascript" src="/skin/js/date.js"></script>
+</head>
+<body>
+<div id="warp">
+{dede:include filename="head.htm"/}
+<div id="banner-height" class="in">
+  <div id="banner-fixed">
+    <div id="banner" class="swiper-container">
+      <div class="db swiper-wrapper">
+        <div class="list dis swiper-slide" style="background:url(/skin/img/banner2.jpg) no-repeat center;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--手机版广告图-->
+<div id="phone_banner">
+  <div class="swiper-wrapper"> {dede:myppt typeid='2'}
+    <div class="list swiper-slide"><img src="[field:pic/]" /></div>
+    {/dede:myppt} </div>
+</div>
+<script type="text/javascript">
+	var BannerSwiper = new Swiper('#banner',{
+        //autoplay:4000,
+        prevButton: '#banner .prev',
+        nextButton: '#banner .next',
+        onSlideChangeStart: function(swiper){
+	    	$('#banner .db .list').find('.nts').removeClass('on');
+	    },
+	    onSlideChangeEnd: function(swiper){
+	    	$('#banner .db .list').eq(BannerSwiper.activeIndex).find('.nts').addClass('on');
+	    }
+	});
+	
+	var PhoneBannerSwiper = new Swiper('#phone_banner',{
+        autoplay:3000,
+	    pagination: '#phone_banner .hb',
+	    paginationClickable: '#phone_banner .hb',
+	});
+</script>
+<div id="contact" class="relative inside">
+  <div class="one main">
+    <div class="list dis wow fadeInUp" data-wow-delay="0.1s">
+      <div class="img dis"><img src="/skin/img/img39.jpg" /></div>
+      <div class="fz20">公司地址</div>
+      <div class="fz16">{dede:global.cfg_dz/}</div>
+    </div>
+    <div class="list dis wow fadeInUp" data-wow-delay="0.2s">
+      <div class="img dis"><img src="/skin/img/img40.jpg" /></div>
+      <div class="fz20">联系方式</div>
+      <div class="fz16">电话：{dede:global.cfg_dh/}</div>
+      <div class="fz16">传真：{dede:global.cfg_cz/}</div>
+    </div>
+    <div class="list dis wow fadeInUp" data-wow-delay="0.3s">
+      <div class="img dis"><img src="/skin/img/img41.jpg" /></div>
+      <div class="fz20">电子邮箱</div>
+      <div class="fz16">{dede:global.cfg_yx/}</div>
+    </div>
+    <div class="list dis wow fadeInUp" data-wow-delay="0.4s">
+      <div class="img dis"><img src="/skin/img/img42.jpg" /></div>
+      <div class="fz20">联系QQ</div>
+      <div class="fz16">咨询QQ：{dede:global.cfg_qq/}</div>
+    </div>
+  </div>
+  <div class="two"></div>
+  <div class="thr main clear_both"> 
+    <!--<iframe src="" class="map fl"></iframe>-->
+    <div class="img fl wow fadeInLeft"> 
+      
+      <!--引用百度地图API-->
+      <style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+      <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script> 
+      
+      <!--百度地图容器-->
+      <div style="width:697px;height:550px;border:#ccc solid 1px;" id="dituContent"></div>
+      <script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point({dede:global.cfg_dt/});//定义一个中心点坐标
+        map.centerAndZoom(point,14);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+	map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+	map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+	map.addControl(ctrl_sca);
+    }
+    
+    
+    initMap();//创建和初始化地图
+</script> 
+    </div>
+    <div class="form border-box fr wow fadeInRight">
+      <form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+        <input type="hidden" name="action" value="post" />
+        <input type="hidden" name="diyid" value="1" />
+        <input type="hidden" name="do" value="2" />
+        <div class="fz30">给我们留言</div>
+        <div class="Zi1 fz14">请提供下联系方式 我们尽快联系您。</div>
+        <div class="list clear_both">
+          <input type="text" class="input fl fz14 border-box" name='name' id='name' value="" placeholder="您的姓名（必填）" />
+          <input type="text" class="input fr fz14 border-box" name='tel' id='tel' value="" maxlength="11" placeholder="您的电话（必填）" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" />
+        </div>
+        <div class="list clear_both">
+          <input type="text" class="input fl fz14 border-box"  name='yx' id='yx' value="" placeholder="您的邮箱" />
+          <input type="text" class="input fr fz14 border-box" name='gs' id='gs' value="" placeholder="所在公司" />
+        </div>
+        <div class="list">
+          <textarea class="text fz14 border-box" name='liuyan' id='liuyan' placeholder="留言内容"></textarea>
+        </div>
+        <input type="submit" class="sub fz14" value="提交信息" />
+        <input type="hidden" name="data" value="feedback" />
+        <input type="hidden" name="dede_fields" value="name,text;tel,text;yx,text;gs,text;liuyan,multitext" />
+        <input type="hidden" name="dede_fieldshash" value="740b8f8374ede298030a586ed53d6155" />
+      </form>
+    </div>
+  </div>
+</div>
+{dede:include filename="footer.htm"/}
+</body>
+</html>

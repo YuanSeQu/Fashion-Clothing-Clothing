@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link rel="stylesheet" rev="stylesheet" href="/skin/css/global.css" />
+<link rel="stylesheet" rev="stylesheet" href="/skin/css/lib.css" />
+<link rel="stylesheet" rev="stylesheet" href="/skin/css/style.css" />
+<link rel="stylesheet" rev="stylesheet" href="/skin/css/swiper-3.4.2.min.css" />
+<link rel="stylesheet" rev="stylesheet" href="/skin/css/animate.min2.css" />
+<script type="text/javascript" src="/skin/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/skin/js/wow.min.js"></script>
+<script type="text/javascript" src="/skin/js/website.js"></script>
+<script type="text/javascript" src="/skin/js/iepngfix_tilebg.js"></script>
+<script type="text/javascript" src="/skin/js/global.js"></script>
+<script type="text/javascript" src="/skin/js/swiper-3.4.2.min.js"></script>
+<script type="text/javascript" src="/skin/js/checkform.js"></script>
+<script type="text/javascript" src="/skin/js/cn.js"></script>
+<script type="text/javascript" src="/skin/js/swf_obj.js"></script>
+<script type="text/javascript" src="/skin/js/date.js"></script>
+</head>
+<body>
+<div id="warp">
+{dede:include filename="head.htm"/}
+<div id="banner-height" class="in">
+  <div id="banner-fixed">
+    <div id="banner" class="swiper-container">
+      <div class="db swiper-wrapper">
+        <div class="list dis swiper-slide" style="background:url(/skin/img/banner2.jpg) no-repeat center;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--手机版广告图-->
+<div id="phone_banner">
+  <div class="swiper-wrapper"> {dede:myppt typeid='2'}
+    <div class="list swiper-slide"><img src="[field:pic/]" /></div>
+    {/dede:myppt} </div>
+</div>
+<script type="text/javascript">
+	var BannerSwiper = new Swiper('#banner',{
+        //autoplay:4000,
+        prevButton: '#banner .prev',
+        nextButton: '#banner .next',
+        onSlideChangeStart: function(swiper){
+	    	$('#banner .db .list').find('.nts').removeClass('on');
+	    },
+	    onSlideChangeEnd: function(swiper){
+	    	$('#banner .db .list').eq(BannerSwiper.activeIndex).find('.nts').addClass('on');
+	    }
+	});
+	
+	var PhoneBannerSwiper = new Swiper('#phone_banner',{
+        autoplay:3000,
+	    pagination: '#phone_banner .hb',
+	    paginationClickable: '#phone_banner .hb',
+	});
+</script>
+<div id="inside_category" class="relative"> {dede:channel type="son"  currentstyle=" <a href='~typelink~' class='list fz14 dis on wow fadeInLeft' >~typename~</a> " } <a href="[field:typeurl/]" class="list fz14 dis  wow fadeInLeft" title="[field:typename/]" >[field:typename/]</a> {/dede:channel} </div>
+<div id="products" class="relative inside">
+  <div class="one main">
+    <div class="last clear_both"> {dede:list  pagesize='8'} <a href="[field:arcurl/]" class="list dis fl b_pic trans wow fadeInUp">
+      <div class="img"><img src="[field:litpic/]" alt="[field:title/]"/></div>
+      <div class="nts">
+        <div class="ots">
+          <div class="fz18">[field:title/]</div>
+          <div class="fz12 font-zi4"><i></i>MORE<i></i></div>
+          <div class="fz75 font-zi5">0[field:global.autoindex/]</div>
+          <div class="xian"></div>
+        </div>
+      </div>
+      </a> {/dede:list} </div>
+    <div id="turn_page1" class="wow fadeInUp"> {dede:pagelist listitem="pageno" listsize="1"/} </div>
+  </div>
+</div>
+{dede:include filename="footer.htm"/}
+</body>
+</html>
