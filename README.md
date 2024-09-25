@@ -1,37 +1,33 @@
-# 通用高端品牌时装服饰服装设计企业官网源码开源官网模板
+# 项目介绍
+1.通用高端品牌时装服饰服装设计企业官网源码开源官网模板<br/>
+2.高端品牌时装服饰服装设计企业网站源码带手机端，织梦dedecms模板内置后台，面板操作简单、使用容易，支持基本参数快速对模板的首页title标题、keywords关键词、description选项以及客服电话等进行配置，不需要懂得代码即可，特别适合企业快速建站，减少用户的设置时间和精力。模板包含安装说明，并包含测试数据，本模板基于DEDECms 5.7 UTF-8设计。<br/>
+3.将下载下来的模板直接上传服务器，网站效果和演示站一样，采用开源免费的PHP企业网站开发建设管理系统，后台操作简单，安装非常方便，更适合新手朋友，可免费协助指导使用及安装！<br/>
+4.直接运行：http://您的域名/install ，默认账号密码：admin <br/>
+5.登录账号：admin     登录密码：admin<br/>
+6.你下载的织梦模板并不包括商业使用授权，如需商业用途，请购买商业授权或升级至DedeCMSV6社区版。<br/>
 
-#### 介绍
-高端品牌时装服饰服装设计企业网站源码带手机端，织梦dedecms模板内置后台，面板操作简单、使用容易，支持基本参数快速对模板的首页title标题、keywords关键词、description选项以及客服电话等进行配置，不需要懂得代码即可，特别适合企业快速建站，减少用户的设置时间和精力。模板包含安装说明，并包含测试数据，本模板基于DEDECms 5.7 UTF-8设计。
+# 模板特点
+①、采用pc加手机端设计，风格大气，可在手机端适配，适用于多数企业。<br/>
+②、网站目录深度做过优化，模板带xml网站地图，更利于SEO优化推广。<br/>
+③、SEO框架布局，栏目及文章页均可独立设置标题/关键词/描述。<br/>
+④、网站后台可直接修改联系方式、地址、版权信息，统计代码等，修改更加方便。<br/>
 
-#### 软件架构
-软件架构说明
+# 更多源码
+1.更多500套高级源码可以选购，更多案例查看：https://kdocs.cn/l/ceE9t0WJiSaH <br/>
+2.高级源码和商务合作可以联系淘宝小店链接：https://shop398787089.taobao.com/ <br/>
+3.猿社区有强大的开发者与产品经理社区支持，可以联系客服加入，目前已有100+的伙伴加入我们，平时也有开源项目组队 <br/>
 
+# 系统图片
+![输入图片说明](https://gitee.com/apehub/BuildingMaterials/raw/master/1727285094693.jpg)
 
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+# 配套资料
+DedeCMS使用（快速入门）手册：https://help.dedecms.com/chujie//<br/>
+DedeCMS模板手册：https://help.dedecms.com/mubanshouce/<br/>
 
 
-#### 特技
+# 关于我们
+1.猿社区ApeHub，专为外贸企业与初创企业提供独立站解决方案社区。我们汇聚技术精英，提供前沿的底层建设方案，助力微创/出海企业构建高效、安全的网站<br/>
+2.不定期gitee和github官网号更新免费全开源模板，有兴趣请帮点一下 **Star** 哦<br/>
+3.**客服微信：yuansequ 有技术交流群可以联系客服加入，长期有资深开发者提供答疑**<br/>
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+<img src="https://gitee.com/apehub/ChemicalIndustry/raw/master/kefu.jpg"  width="284.5" height="284.5"/>
